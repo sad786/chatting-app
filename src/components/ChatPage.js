@@ -187,11 +187,11 @@ const ChatPage = ({user, setLogin}) => {
                         try{
                             const res = await axios.post(process.env.REACT_APP_BACKEND_URL+'/auth/save-fcm-token/',{userId:user.id, fcmToken:fcm_token},
                                                     {headers:{'Authorization':`Bearer ${localStorage.getItem('jwtToken')}`}});
-                            //console.log('Response ',res);
+                            console.log('Response ',res);
                             if(res.status===200){
                                 localStorage.setItem('fcm-token',fcm_token);
                             }else{
-                                //console.log('Error while saving token',);
+                                console.log('Error while saving token');
                             }
                         }catch(err){
                             console.log('Error while fetching FCM ->',err)
