@@ -191,10 +191,10 @@ const ChatPage = ({user, setLogin}) => {
                             if(res.status===200){
                                 localStorage.setItem('fcm-token',fcm_token);
                             }else{
-                                //console.log('Error while saving token');
+                                //console.log('Error while saving token',);
                             }
                         }catch(err){
-                           // console.log(err)
+                            console.log('Error while fetching FCM ->',err)
                         }
                         }else{
                             //console.log('Error while fetching token');
