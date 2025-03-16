@@ -26,12 +26,14 @@ export const messaging = getMessaging(app);
 // Request permission and get FCM token to receive notifications
 export const requestNotificationPermission = async () => {
   try {
+    const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js");
+    console.log("Service Worker Registered");
     const permission = await Notification.requestPermission();
     console.log(permission)
     if (permission === "granted") {
       const token = await getToken(messaging, {
         vapidKey: process.env.REACT_APP_VAPID,
-        serviceWorkerRegistration:'/firebase-messaging-sw.js',
+        serviceWorkerRegistration: registration,
       });
       console.log(token);
       return token;
