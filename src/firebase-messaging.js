@@ -3,19 +3,19 @@ import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyBlIimHBP59wtzUdwvJ-rmiLgiTz5v-fQ8",
-  
-    authDomain: "chat-app-cce00.firebaseapp.com",
-  
-    projectId: "chat-app-cce00",
-  
-    storageBucket: "chat-app-cce00.firebasestorage.app",
-  
-    messagingSenderId: "128937400594",
-  
-    appId: "1:128937400594:web:b49cc0accf0f2c33323bcb",
-  
-    measurementId: "G-MW73CH6CV7"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
   
 };
 
@@ -30,7 +30,7 @@ export const requestNotificationPermission = async () => {
     console.log(permission)
     if (permission === "granted") {
       const token = await getToken(messaging, {
-        vapidKey: "BCsg4LfnLP_kF_M1EpdJ_Kua1W0MXUnX2WxIR65kFoLO3F80rP6aVl6HKExYwqrHxfxssHLGyXbFXjVWFtn1-N0",
+        vapidKey: process.env.REACT_APP_VAPID,
         
       });
       console.log(token);
