@@ -31,7 +31,7 @@ export const requestNotificationPermission = async () => {
     if (permission === "granted") {
       const token = await getToken(messaging, {
         vapidKey: process.env.REACT_APP_VAPID,
-        
+        serviceWorkerRegistration:'/firebase-messaging-sw.js',
       });
       console.log(token);
       return token;

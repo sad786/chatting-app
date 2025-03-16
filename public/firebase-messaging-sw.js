@@ -28,7 +28,7 @@ firebase.initializeApp({
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 });
 
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 // const app = initializeApp(firebaseConfig);
 
 const messaging = firebase.messaging();
