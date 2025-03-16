@@ -2,8 +2,8 @@
 // importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js');
 // importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js');
 
-importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-messaging-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.6.10/firebase-messaging-compat.js');
 
 // // import { getMessaging, onBackgroundMessage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js";
 
@@ -27,6 +27,9 @@ firebase.initializeApp({
   
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 });
+
+firebase.initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
 const messaging = firebase.messaging();
 
