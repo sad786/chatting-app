@@ -1,6 +1,6 @@
 ## Chatting App like real time chat App 
 
-Deployed Link: https://chatting-app.tawny.vercel.app
+Deployed Link: https://chatting-app-tawny.vercel.app
 
 This Application is designed in React.js and backed is designed in Express.js 
 This Application uses Authencation of jsonwebtoken mechanism to provide security
